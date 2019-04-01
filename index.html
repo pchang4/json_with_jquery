@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON with jQuery</title>
+</head>
+<body>
+    
+    <h1>Title</h1>
+    <h3>Publisher</h3>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+let data = "https://comichron-data.github.io/api/titles.json";
+
+  $.getJSON( 
+      data, function(data){
+
+    console.log(data[24]);
+    $('h1').text(data[24].title);
+    $('h3').text(data[24].publisher);
+  } );
+
+
+</script>
+</body>
+</html>
